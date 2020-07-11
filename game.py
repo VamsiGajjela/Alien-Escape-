@@ -283,17 +283,13 @@ def game():
         if replay<height:
             display.blit(background, (replay,0))
 
-        if tracker<1000:
-            Large_text_display("Stage: 1", 275, 10)
-            background_x-=3
-
-        if tracker<2500 and tracker>1000:
+        if 1000 < tracker < 2500:
             Large_text_display("Stage: 2", 275, 10)
             background_x-=5
             comet_speed=-3.5
             comet_speed2=-4
         
-        elif tracker>2500 and tracker<5000:
+        elif 2500 < tracker < 5000:
             Large_text_display("Stage: 3", 275, 10)
             comet_speed=-4
             background_x-=6
@@ -301,16 +297,16 @@ def game():
             sat_speed=0
             comet_speed2=-4.5
 
-        elif tracker>5000 and tracker<7000:
+        elif 5000 < tracker < 7000:
             Large_text_display("Stage: 4", 275, 10)
             background_x-=10
-            comet_speed=0
-            rocket_speed=0
-            sat_speed=0
-            comet_speed2=0
+            comet_speed=-1
+            rocket_speed=-5
+            sat_speed=-1
+            comet_speed2=-3
 
         
-        elif tracker>7000 and tracker<7250:
+        elif 7000 < tracker < 7250:
             Large_text_display(("You got away"), 100, 10)
             background_x-=10
             comet_speed=-1
@@ -319,7 +315,7 @@ def game():
             comet_speed2=-2
 
 
-        elif tracker>7250 and tracker<8000 :          
+        elif 7250 < tracker < 8000 :          
             Large_text_display(("Beat your highscore"), 100, 10)    
             background_x-=11
             comet_speed=-1
@@ -327,7 +323,7 @@ def game():
             sat_speed=-4
             comet_speed2=-2
 
-        elif tracker>8000:
+        elif tracker > 8000:
             Large_text_display("INSANE MODE!", 275, 10)
             background_x-=14
             comet_speed=-7
